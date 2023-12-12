@@ -33,5 +33,7 @@ class AnalysePDF:
         self.string_document = ' '.join(new_document)
 
     def compare_keywords(self, cv: list[tuple], offer: list[tuple]) -> int:
-        union: set = set(cv) & set(offer)
+        cv_list: list = list(dict(cv).keys())
+        offer_list: list = list(dict(offer).keys())
+        union: set = set(cv_list) & set(offer_list)
         return len(union)
